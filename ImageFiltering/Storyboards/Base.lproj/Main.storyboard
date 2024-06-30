@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Filter View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FilterViewController" customModule="ImageFiltering" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-BF-3sb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="772"/>
+                                <color key="backgroundColor" red="0.081793305837563501" green="0.081793305837563501" blue="0.081793305837563501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOe-tV-IDx" userLabel="Compare Button">
+                                <rect key="frame" x="348" y="44" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="T3L-WP-FZv"/>
+                                    <constraint firstAttribute="width" secondItem="UOe-tV-IDx" secondAttribute="height" multiplier="1:1" id="Ub1-cl-3I6"/>
+                                    <constraint firstAttribute="width" constant="35" id="wr2-7T-oGz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="CompareOff"/>
+                                <state key="selected" image="CompareON"/>
+                                <connections>
+                                    <action selector="compareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdY-Eb-8IX"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEf-NS-R74">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ci5-mm-N7I">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hzp-Ib-cgs">
+                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="40"/>
+                                                <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="camera.on.rectangle" catalog="system">
+                                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectPhotoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIZ-DW-56l"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="WEx-eS-8lc">
+                                                <rect key="frame" x="105.5" y="0.0" width="97.5" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="crop" catalog="system">
+                                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="filterButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntE-03-gqH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="xfl-hb-fiA">
+                                                <rect key="frame" x="211" y="0.0" width="97.5" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="gobackward" catalog="system">
+                                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="undoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TRR-Hx-sOK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="bIs-XH-A3d">
+                                                <rect key="frame" x="316.5" y="0.0" width="97.5" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="square.and.arrow.up" catalog="system">
+                                                    <color key="titleColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dzY-4G-tRd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="09t-3d-5IK"/>
+                                    <constraint firstItem="ci5-mm-N7I" firstAttribute="leading" secondItem="bEf-NS-R74" secondAttribute="leading" id="8Sh-Pk-atU"/>
+                                    <constraint firstAttribute="trailing" secondItem="ci5-mm-N7I" secondAttribute="trailing" id="Dnl-8C-FFm"/>
+                                    <constraint firstItem="ci5-mm-N7I" firstAttribute="top" secondItem="bEf-NS-R74" secondAttribute="top" constant="8" id="W9r-lA-mNa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OUQ-BF-3sb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2zZ-Fq-6Z7"/>
+                            <constraint firstItem="bEf-NS-R74" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U9W-eW-TXi"/>
+                            <constraint firstItem="bEf-NS-R74" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="b3y-Ss-Foz"/>
+                            <constraint firstItem="OUQ-BF-3sb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="llg-7S-jab"/>
+                            <constraint firstItem="UOe-tV-IDx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lnw-Mh-MD9"/>
+                            <constraint firstItem="bEf-NS-R74" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mCJ-pq-sPb"/>
+                            <constraint firstItem="bEf-NS-R74" firstAttribute="top" secondItem="OUQ-BF-3sb" secondAttribute="bottom" constant="10" id="qYp-5J-8GG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOe-tV-IDx" secondAttribute="trailing" constant="31" id="tIl-J9-S3L"/>
+                            <constraint firstItem="OUQ-BF-3sb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uyg-Lf-nPe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomMenu" destination="bEf-NS-R74" id="NdC-kv-dtO"/>
+                        <outlet property="brightnessButton" destination="K4l-2P-CZV" id="by9-nk-ETC"/>
+                        <outlet property="compareMenuButton" destination="UOe-tV-IDx" id="ygo-PV-6xM"/>
+                        <outlet property="contrastButton" destination="OJL-a8-3MB" id="xyL-Pe-Z3W"/>
+                        <outlet property="editingBarMenu" destination="7gD-kG-syX" id="7vQ-ai-dCg"/>
+                        <outlet property="editingValueSlider" destination="fUY-CM-8RG" id="DT4-go-64y"/>
+                        <outlet property="filterMenuButton" destination="WEx-eS-8lc" id="klY-98-GLy"/>
+                        <outlet property="greyButton" destination="5lT-qt-14i" id="87m-lg-DgG"/>
+                        <outlet property="newMenuButton" destination="hzp-Ib-cgs" id="srl-eH-sYf"/>
+                        <outlet property="photoImageView" destination="OUQ-BF-3sb" id="a4I-bI-43M"/>
+                        <outlet property="secondaryMenu" destination="6nD-NK-9Pa" id="knx-xF-Nab"/>
+                        <outlet property="sepiaButton" destination="h0V-d4-vQz" id="H4s-TA-lHE"/>
+                        <outlet property="shareMenuButton" destination="bIs-XH-A3d" id="InP-15-OpO"/>
+                        <outlet property="sketchButton" destination="w6Y-0A-nhV" id="Wop-dV-4Sk"/>
+                        <outlet property="undoMenuButton" destination="xfl-hb-fiA" id="0MI-on-mTP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="6nD-NK-9Pa" userLabel="Filters View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zma-Nz-LkK">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJL-a8-3MB">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
+                                    <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="eye.fill" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                    </state>
+                                    <state key="selected">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="K4l-2P-CZV">
+                                    <rect key="frame" x="48" y="0.0" width="48" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="sun.min.fill" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                    </state>
+                                    <state key="selected">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5lT-qt-14i">
+                                    <rect key="frame" x="96" y="0.0" width="48" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="lightbulb.slash.fill" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                    </state>
+                                    <state key="selected">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h0V-d4-vQz">
+                                    <rect key="frame" x="144" y="0.0" width="48" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="circle.bottomthird.split" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                    </state>
+                                    <state key="selected">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="w6Y-0A-nhV">
+                                    <rect key="frame" x="192" y="0.0" width="48" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="waveform.circle" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="ultraLight"/>
+                                    </state>
+                                    <state key="selected">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="7kK-rn-QPM" firstAttribute="bottom" secondItem="zma-Nz-LkK" secondAttribute="bottom" id="Nvv-Y9-yWz"/>
+                        <constraint firstItem="zma-Nz-LkK" firstAttribute="top" secondItem="6nD-NK-9Pa" secondAttribute="top" id="Rpw-G6-b0f"/>
+                        <constraint firstItem="7kK-rn-QPM" firstAttribute="trailing" secondItem="zma-Nz-LkK" secondAttribute="trailing" id="kWf-Gp-Ie9"/>
+                        <constraint firstItem="zma-Nz-LkK" firstAttribute="leading" secondItem="7kK-rn-QPM" secondAttribute="leading" id="nKs-eL-cs5"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="7kK-rn-QPM"/>
+                </view>
+                <view contentMode="scaleToFill" id="7gD-kG-syX" userLabel="Editing Bar View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="254" translatesAutoresizingMaskIntoConstraints="NO" id="fUY-CM-8RG">
+                            <rect key="frame" x="13" y="49" width="214" height="31"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    <viewLayoutGuide key="safeArea" id="YEt-D3-kKE"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CompareON" width="256" height="256"/>
+        <image name="CompareOff" width="256" height="256"/>
+        <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
+        <image name="circle.bottomthird.split" catalog="system" width="128" height="121"/>
+        <image name="crop" catalog="system" width="128" height="122"/>
+        <image name="eye.fill" catalog="system" width="128" height="78"/>
+        <image name="gobackward" catalog="system" width="121" height="128"/>
+        <image name="lightbulb.slash.fill" catalog="system" width="116" height="128"/>
+        <image name="placeholder" width="512" height="512"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="sun.min.fill" catalog="system" width="128" height="121"/>
+        <image name="waveform.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
